@@ -1,0 +1,34 @@
+/**
+	all the css related current page
+*/
+body {
+	width: 100%;
+	overflow: hidden;
+}
+header, main, footer {
+	padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+	header, main, footer {
+		padding-left: 0;
+	}
+}
+.chart {
+	width: 80%;
+	height: 500px;
+}
+.chart_sec .btn-large {
+	margin-left: 70px;
+}
+.preloader-wrapper{
+	position: absolute;
+	left: 55%;
+	top: 50%;
+}
+#container {
+	width: 700px;
+	height: 400px;
+	margin: 0 auto;
+	margin-bottom:100px;
+}
