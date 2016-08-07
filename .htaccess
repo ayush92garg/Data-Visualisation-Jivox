@@ -1,0 +1,21 @@
+RewriteEngine on
+
+RewriteBase /
+#RewriteRule ^index.html jivox/modules/controller.php [L,R=301]
+
+
+Options +FollowSymLinks
+
+#Get stateId value (state/02/list) and pass it as query string to list.php
+RewriteRule state/([0-9]*)/list jivox/controller/list.php?state_code=$1&type=2 [END,QSA]
+
+#Get get value for which the list is requested((city/state)/list) it as query string to list.php
+RewriteRule ([a-z]*)/list jivox/controller/list.php?category=$1&type=1 [END,QSA]
+
+#Get stateId,cityId and type value (city/2/11/Age) and pass it as query string to list.php
+RewriteRule city/([0-9]*)/([0-9]*)/([a-z]*) jivox/controller/city.php?state_code=$1&city_code=$2&type=$3 [R=302,NC]
+
+#Get stateId and type value (state/2/Age) and pass it as query string to list.php
+RewriteRule state/([0-9]*)/([a-z]*) jivox/controller/state.php?state_code=$1&type=$2 [R=302,NC]
+
+
