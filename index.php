@@ -1,7 +1,7 @@
 <?php
 
 	// $menu_types = array("Population","Profession","Education");
-	$menu_types = array("Education");
+	$menu_types = array("Analyze","Compare");
 	$sub_menu_types = array("City","State");
 
 ?>
@@ -16,7 +16,7 @@
 	<body>
 		<div class="header">
 			<div class="row">
-				<div class="col s12 z-depth-1 center-align offset-s1"><span class="flow-text">Indian Education Based Census Report</span></div>
+				<div class="col s12 z-depth-1 center-align offset-s1 red lighten-1 white-text header_sec"><span class="flow-text">Indian Education Based Census Report</span></div>
 			</div>
 		</div>
 		<div class="container">
@@ -24,7 +24,7 @@
 				<div class="col s3">
 					<ul id="nav-mobile" class="side-nav fixed">
 						<div class="row">
-							<div class="col s12 offset-s4"><span class="flow-text">Menu</span></div>
+							<div class="col s12 offset-s4 menu_sec"><span class="flow-text">Menu</span></div>
 						</div>
 						<div class="menu-header">
 							
@@ -37,7 +37,7 @@
 									<div class="collapsible-body">
 										<ul>
 											<?php foreach ($sub_menu_types as $sub_menu) { ?>
-												<li><a class="<?php echo strtolower($sub_menu);?>"><?php echo $sub_menu;?></a></li>
+												<li><a class="<?php echo strtolower($main_menu)."_".strtolower($sub_menu);?>"><?php echo $sub_menu;?></a></li>
 											<?php } ?>
 										</ul>
 									</div>
@@ -58,6 +58,16 @@
 							<option value="" disabled selected>Select City</option>
 						</select>
 					</div>
+					<div class="input-field col s4 hide city_select_1">
+						<select>
+							<option value="" disabled selected>Select City</option>
+						</select>
+					</div>
+					<div class="input-field col s4 hide city_select_2">
+						<select>
+							<option value="" disabled selected>Select City</option>
+						</select>
+					</div>
 					<div class="input-field col s4 hide type_select">
 						<select>
 							<option value="" disabled selected>Select Type</option>
@@ -72,6 +82,7 @@
 					<!-- <a class="waves-effect waves-light waves-red btn-large">Gio Graph</a> -->
 					<a class="waves-effect waves-light waves-red btn-large hide" id="bar_graph" data-type="column">Bar Chart</a>
 					<a class="waves-effect waves-light waves-red btn-large hide" id="pie_graph" data-type="pie">Pie Chart</a>
+					<a class="waves-effect waves-light waves-red btn-large hide" id="line_graph" data-type="line">Line Chart</a>
 				</div>
 				<div class="preloader-wrapper big active hide">
 					<div class="spinner-layer spinner-blue">
