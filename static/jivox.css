@@ -8,7 +8,13 @@ body {
 header, main, footer {
 	padding-left: 300px;
 }
-
+.header .header_sec{
+	height: 80px;
+	padding-top: 20px;
+}
+#nav-mobile .menu_sec {
+	margin-top: 80px;
+}
 @media only screen and (max-width : 992px) {
 	header, main, footer {
 		padding-left: 0;

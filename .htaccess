@@ -19,3 +19,6 @@ RewriteRule city/([0-9]*)/([0-9]*)/([a-z]*) jivox/controller/city.php?state_code
 RewriteRule state/([0-9]*)/([a-z]*) jivox/controller/state.php?state_code=$1&type=$2 [R=302,NC]
 
 
+RewriteRule compare/([a-z]*)/([a-z]*)/([a-z]*) jivox/controller/compare.php?city_name_1=$1&city_name_2=$2&type=$3 [R=302,NC]
+
+
